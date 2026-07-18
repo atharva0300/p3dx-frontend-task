@@ -169,7 +169,7 @@ This project implements the core requirements of the P3DX Frontend Assignment, i
 
 **Atharva Pingale**
 
-GitHub: https://github.com/<your-github-username>
+GitHub: https://github.com/atharva0300
 
 ---
 
