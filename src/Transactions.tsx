@@ -165,7 +165,7 @@ const transactions: Transaction[] = [
 
     type: "Degree Verification",
 
-    sender: "IIT Bangalore",
+    sender: "IIIT Bangalore",
 
     senderWorld: "India / Karnataka",
 

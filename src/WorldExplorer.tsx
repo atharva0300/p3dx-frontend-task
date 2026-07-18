@@ -90,8 +90,8 @@ const worldTree: WorldNode[] = [
     gatewayStatus: 'healthy',
     children: [
       {
-        id: 'iit-bangalore',
-        name: 'IIT Bangalore',
+        id: 'iiit-bangalore',
+        name: 'IIIT Bangalore',
         type: 'institution',
         agents: 312,
         gatewayStatus: 'healthy',
@@ -179,10 +179,10 @@ const worldDetails: Record<string, {
   connections: ConnectionData[]
   transactions: TxData[]
 }> = {
-  'iit-bangalore': {
-    breadcrumb: ['India', 'IIT Bangalore'],
+  'iiit-bangalore': {
+    breadcrumb: ['India', 'IIIT Bangalore'],
     overview: { type: 'Institution', jurisdiction: 'India', parent: 'India (IN-J-001)', created: '2023-04-12', status: 'Active' },
-    gateway: { name: 'IIT Gateway', status: 'healthy', health: '98%', latency: '18ms', connectedWorlds: 4, currentConnections: 7 },
+    gateway: { name: 'IIIT Gateway', status: 'healthy', health: '98%', latency: '18ms', connectedWorlds: 4, currentConnections: 7 },
     stats: { agents: 12, lockers: 26, departments: 3, endpoints: 14, consents: 9, txToday: 31 },
     agents: [
       { id: 'a1', name: 'Rahul Sharma', role: 'Citizen', lockers: 2, status: 'online', avatar: 'RS' },
@@ -191,10 +191,10 @@ const worldDetails: Record<string, {
       { id: 'a4', name: 'Priya Menon', role: 'Researcher', lockers: 3, status: 'offline', avatar: 'PM' },
     ],
     lockers: [
-      { id: 'l1', name: 'Degree Locker', type: 'Academic', owner: 'Rahul Sharma', endpoint: 'in-iitb-deg-001', status: 'active', icon: <GraduationCap size={14} color="#2563eb" /> },
-      { id: 'l2', name: 'Identity Locker', type: 'Identity', owner: 'Rahul Sharma', endpoint: 'in-iitb-id-002', status: 'active', icon: <Shield size={14} color="#7c3aed" /> },
-      { id: 'l3', name: 'Medical Locker', type: 'Health', owner: 'Priya Menon', endpoint: 'in-iitb-med-003', status: 'active', icon: <Heart size={14} color="#dc2626" /> },
-      { id: 'l4', name: 'Employment Locker', type: 'Professional', owner: 'University Administrator', endpoint: 'in-iitb-emp-004', status: 'active', icon: <Briefcase size={14} color="#16a34a" /> },
+      { id: 'l1', name: 'Degree Locker', type: 'Academic', owner: 'Rahul Sharma', endpoint: 'in-iiitb-deg-001', status: 'active', icon: <GraduationCap size={14} color="#2563eb" /> },
+      { id: 'l2', name: 'Identity Locker', type: 'Identity', owner: 'Rahul Sharma', endpoint: 'in-iiitb-id-002', status: 'active', icon: <Shield size={14} color="#7c3aed" /> },
+      { id: 'l3', name: 'Medical Locker', type: 'Health', owner: 'Priya Menon', endpoint: 'in-iiitb-med-003', status: 'active', icon: <Heart size={14} color="#dc2626" /> },
+      { id: 'l4', name: 'Employment Locker', type: 'Professional', owner: 'University Administrator', endpoint: 'in-iiitb-emp-004', status: 'active', icon: <Briefcase size={14} color="#16a34a" /> },
     ],
     connections: [
       { id: 'c1', from: 'India Gateway (IN-GW-01)', to: 'EU Gateway (EU-GW-03)', status: 'established', purpose: 'Employment Verification', since: '2h 14m' },
@@ -202,7 +202,7 @@ const worldDetails: Record<string, {
       { id: 'c3', from: 'India Gateway (IN-GW-02)', to: 'EU Gateway (EU-GW-05)', status: 'pending', purpose: 'Research Data', since: '14m' },
     ],
     transactions: [
-      { id: 'TX-8841', type: 'Degree Verification', sender: 'IIT Bangalore', receiver: 'SAP Germany', gateway: 'IN-GW-01 ↔ EU-GW-03', consent: 'CST-4421', time: '2 min ago', status: 'completed' },
+      { id: 'TX-8841', type: 'Degree Verification', sender: 'IIIT Bangalore', receiver: 'SAP Germany', gateway: 'IN-GW-01 ↔ EU-GW-03', consent: 'CST-4421', time: '2 min ago', status: 'completed' },
       { id: 'TX-8839', type: 'Identity Verification', sender: 'Aadhaar Authority', receiver: 'Deutsche Bank', gateway: 'IN-GW-01 ↔ EU-GW-02', consent: 'CST-4415', time: '5 min ago', status: 'completed' },
       { id: 'TX-8836', type: 'Medical Record Request', sender: 'AIIMS Delhi', receiver: 'Munich Hospital', gateway: 'IN-GW-02 ↔ EU-GW-01', consent: 'CST-4418', time: '12 min ago', status: 'pending' },
     ],
@@ -224,7 +224,7 @@ const worldDetails: Record<string, {
       { id: 'c1', from: 'India Gateway (IN-GW-01)', to: 'EU Gateway (EU-GW-03)', status: 'established', purpose: 'Multi-purpose', since: '14h 22m' },
     ],
     transactions: [
-      { id: 'TX-8841', type: 'Degree Verification', sender: 'IIT Bangalore', receiver: 'SAP Germany', gateway: 'IN-GW-01 ↔ EU-GW-03', consent: 'CST-4421', time: '2 min ago', status: 'completed' },
+      { id: 'TX-8841', type: 'Degree Verification', sender: 'IIIT Bangalore', receiver: 'SAP Germany', gateway: 'IN-GW-01 ↔ EU-GW-03', consent: 'CST-4421', time: '2 min ago', status: 'completed' },
       { id: 'TX-8829', type: 'Tax Certificate', sender: 'Income Tax Dept.', receiver: 'EU Commission', gateway: 'IN-GW-01 ↔ EU-GW-01', consent: 'CST-4400', time: '18 min ago', status: 'completed' },
     ],
   },
@@ -247,14 +247,14 @@ const worldDetails: Record<string, {
       { id: 'c2', from: 'EU Gateway (EU-GW-03)', to: 'US Gateway (US-GW-02)', status: 'established', purpose: 'Payroll Audit', since: '6h 51m' },
     ],
     transactions: [
-      { id: 'TX-8841', type: 'Degree Verification', sender: 'IIT Bangalore', receiver: 'SAP Germany', gateway: 'IN-GW-01 ↔ EU-GW-03', consent: 'CST-4421', time: '2 min ago', status: 'completed' },
+      { id: 'TX-8841', type: 'Degree Verification', sender: 'IIIT Bangalore', receiver: 'SAP Germany', gateway: 'IN-GW-01 ↔ EU-GW-03', consent: 'CST-4421', time: '2 min ago', status: 'completed' },
       { id: 'TX-8822', type: 'Background Check', sender: 'SAP Germany', receiver: 'Interpol EU', gateway: 'EU-GW-03 ↔ EU-GW-07', consent: 'CST-4398', time: '31 min ago', status: 'completed' },
       { id: 'TX-8810', type: 'Tax Compliance', sender: 'Deutsche Finanzamt', receiver: 'SAP Germany', gateway: 'EU-GW-03 ↔ EU-GW-02', consent: 'CST-4392', time: '1h 12m ago', status: 'failed' },
     ],
   },
 }
 
-const defaultDetail = worldDetails['iit-bangalore']
+const defaultDetail = worldDetails['iiit-bangalore']
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -427,7 +427,7 @@ function SectionLabel({ label }: { label: string }) {
 // ─── Main WorldExplorer ───────────────────────────────────────────────────────
 
 export default function WorldExplorer() {
-  const [selectedId, setSelectedId] = useState('iit-bangalore')
+  const [selectedId, setSelectedId] = useState('iiit-bangalore')
   const detail = worldDetails[selectedId] ?? defaultDetail
 
   // Resolve node name from tree
@@ -507,7 +507,7 @@ export default function WorldExplorer() {
             </div>
             <div>
               <div style={{ fontSize: 18, fontWeight: 700, color: '#0f172a', letterSpacing: '-0.02em' }}>
-                {selectedNode?.name ?? 'IIT Bangalore'}
+                {selectedNode?.name ?? 'IIIT Bangalore'}
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginTop: 2 }}>
                 <span style={{ fontSize: 11, background: tc.bg, color: tc.color, padding: '1px 8px', borderRadius: 99, fontWeight: 600 }}>

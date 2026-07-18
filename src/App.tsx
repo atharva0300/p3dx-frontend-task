@@ -89,7 +89,7 @@ const transactions: Transaction[] = [
   {
     id: "TX-2024-8841",
     type: "Degree Verification",
-    sender: "IIT Bangalore",
+    sender: "IIIT Bangalore",
     senderWorld: "India / Karnataka",
     receiver: "SAP Germany",
     receiverWorld: "EU / Germany",
@@ -186,7 +186,7 @@ const consentRequests: ConsentRequest[] = [
   },
   {
     id: "CST-4427",
-    agent: "IIT Madras",
+    agent: "IIIT Madras",
     world: "India / Tamil Nadu",
     locker: "Degree Locker",
     requestedBy: "Airbus SE",
@@ -912,7 +912,7 @@ function FlowDiagram() {
             marginTop: 2,
           }}
         >
-          Live example: IIT Bangalore → SAP Germany degree
+          Live example: IIIT Bangalore → SAP Germany degree
           verification
         </div>
       </div>
@@ -974,7 +974,7 @@ function FlowDiagram() {
             >
               <Building2 size={14} color="#2563eb" />
               <span style={titleStyle("#1e40af")}>
-                IIT Bangalore
+                IIIT Bangalore
               </span>
             </div>
             <div style={subStyle}>

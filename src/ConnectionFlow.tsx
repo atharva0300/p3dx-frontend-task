@@ -27,96 +27,60 @@ type ConnectionStatus =
 
 interface Connection {
   id: number;
-
   name: string;
-
   sourceWorld: string;
   destinationWorld: string;
-
   sourceAgent: string;
   destinationAgent: string;
-
   sourceGateway: string;
   destinationGateway: string;
-
   sourceLocker: string;
-  destinationLocker: string;
-
   status: ConnectionStatus;
-
   transactions: number;
-
   lastActivity: string;
 }
-
 
 const connections: Connection[] = [
   {
     id: 1,
     name: "Degree Verification",
-
     sourceWorld: "India",
     destinationWorld: "Germany",
-
     sourceAgent: "Rahul Sharma",
     destinationAgent: "SAP HR",
-
     sourceGateway: "India Gateway",
     destinationGateway: "Germany Gateway",
-
     sourceLocker: "Degree Locker",
-    destinationLocker: "Employment Locker",
-
     status: "Established",
-
-    transactions: 24,
-
-    lastActivity: "2 mins ago",
+    transactions: 14,
+    lastActivity: "2 hrs ago",
   },
-
   {
     id: 2,
     name: "Medical Record Exchange",
-
     sourceWorld: "India",
     destinationWorld: "United Kingdom",
-
     sourceAgent: "Apollo Hospital",
     destinationAgent: "NHS UK",
-
     sourceGateway: "India Gateway",
     destinationGateway: "UK Gateway",
-
     sourceLocker: "Medical Locker",
-    destinationLocker: "Healthcare Locker",
-
     status: "Pending",
-
     transactions: 8,
-
     lastActivity: "5 mins ago",
   },
-
   {
     id: 3,
     name: "Identity Verification",
-
     sourceWorld: "India",
     destinationWorld: "Canada",
-
     sourceAgent: "Government Registry",
     destinationAgent: "Immigration Canada",
-
     sourceGateway: "India Gateway",
     destinationGateway: "Canada Gateway",
-
     sourceLocker: "Identity Locker",
-    destinationLocker: "Identity Vault",
-
     status: "Requested",
-
     transactions: 2,
-
     lastActivity: "12 mins ago",
   },
 ];
@@ -642,92 +606,121 @@ export default function ConnectionFlow() {
     paddingBottom: 10,
   }}
 >
-
           <WorkflowNode
-  icon={<UserCircle size={24} color="#2563eb" />}
-  title={selectedConnection.sourceAgent}
-  subtitle="Source Agent"
-/>
+            icon={<Building2 size={22} color="#2563eb" />}
+            title={selectedConnection.destinationAgent}
+            subtitle="Requester"
+          />
 
           <div
-  style={{
-    fontSize: 28,
-    color: "#94a3b8",
-  }}
->
-→
-</div>
-  <WorkflowNode
-  icon={<ShieldCheck size={22} color="#16a34a" />}
-  title={selectedConnection.sourceGateway}
-  subtitle="Gateway"
-/>
-
-          <div
-  style={{
-    minWidth: 170,
-    textAlign: "center",
-  }}
->
-  <div
-    style={{
-      color: "#2563eb",
-      fontWeight: 700,
-      fontSize: 14,
-    }}
-  >
-    ⇄ Secure Tunnel ⇄
-  </div>
-
-  <div
-    style={{
-      marginTop: 6,
-      fontSize: 12,
-      color: "#64748b",
-    }}
-  >
-    Encrypted Cross-border Channel
-  </div>
-</div>
-
-          <WorkflowNode
-  active
-  icon={<ShieldCheck size={22} color="#16a34a" />}
-  title={selectedConnection.destinationGateway}
-  subtitle="Destination Gateway"
-/>
-
-          <div
-  style={{
-    fontSize: 28,
-    color: "#94a3b8",
-  }}
->
-→
-</div>
-
-          <WorkflowNode
-  icon={<Lock size={22} color="#2563eb" />}
-  title={selectedConnection.destinationLocker}
-  subtitle="Locker"
-/>
-          
-<div
-  style={{
-    fontSize: 28,
-    color: "#94a3b8",
-  }}
->
-→
-</div>
-
-          <WorkflowNode
-  icon={<Building2 size={22} color="#2563eb" />}
-  title={selectedConnection.destinationAgent}
-  subtitle="Destination Agent"
-/>
-
+            style={{
+              fontSize: 28,
+              color: "#94a3b8",
+            }}
+          >
+            →
           </div>
+
+          <WorkflowNode
+            icon={<ShieldCheck size={22} color="#16a34a" />}
+            title={selectedConnection.destinationGateway}
+            subtitle="Requester Gateway"
+          />
+
+          <div
+            style={{
+              minWidth: 170,
+              textAlign: "center",
+            }}
+          >
+            <div
+              style={{
+                color: "#2563eb",
+                fontWeight: 700,
+                fontSize: 14,
+              }}
+            >
+              ⇄ Secure Tunnel ⇄
+            </div>
+
+            <div
+              style={{
+                marginTop: 6,
+                fontSize: 12,
+                color: "#64748b",
+              }}
+            >
+              TLS Encrypted Cross-border Channel
+            </div>
+          </div>
+
+          <WorkflowNode
+            active
+            icon={<ShieldCheck size={22} color="#16a34a" />}
+            title={selectedConnection.sourceGateway}
+            subtitle="Source Gateway"
+          />
+
+          <div
+            style={{
+              fontSize: 28,
+              color: "#94a3b8",
+            }}
+          >
+            →
+          </div>
+
+          <WorkflowNode
+            icon={<UserCircle size={22} color="#2563eb" />}
+            title={selectedConnection.sourceAgent}
+            subtitle="Data Owner"
+          />
+
+          <div
+            style={{
+              fontSize: 28,
+              color: "#94a3b8",
+            }}
+          >
+            →
+          </div>
+
+          <WorkflowNode
+            icon={<Lock size={22} color="#2563eb" />}
+            title={selectedConnection.sourceLocker}
+            subtitle="Degree Locker"
+          />
+
+          <div
+            style={{
+              fontSize: 28,
+              color: "#94a3b8",
+            }}
+          >
+            →
+          </div>
+
+          <WorkflowNode
+            icon={<ShieldCheck size={22} color="#16a34a" />}
+            title="Consent Verified"
+            subtitle="Authorization"
+          />
+
+          <div
+            style={{
+              fontSize: 28,
+              color: "#94a3b8",
+            }}
+          >
+            →
+          </div>
+
+          <WorkflowNode
+            icon={<CheckCircle2 size={22} color="#16a34a" />}
+            title="Credential Shared"
+            subtitle="Transaction Complete"
+          />
+        </div>
 
         </div>
 
