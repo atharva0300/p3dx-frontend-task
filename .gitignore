@@ -33,3 +33,7 @@ coverage/
 # vite
 vite.config.ts.timestamp-*
 *.local
+
+
+# recording
+recording
